@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="inner-container">
+            <h1 class="title">Rock Paper Scissors</h1>
+            <div class="top-order-img">
+                <div><button class="click-btn" onclick="playGame('rock')"><img src="images/rock-emoji.png" alt="rock-img" class="img-icon"></button></div>
+                <div><button class="click-btn" onclick="playGame('paper')"><img src="images/paper-emoji.png" alt="paper-img" class="img-icon"></button></div>
+                <div><button class="click-btn" onclick="playGame('scissors')"><img src="images/scissors-emoji.png" alt="scissors-img" class="img-icon"></button></div>
+            </div>
+    
+            <div class="middle-order-content"> 
+
+                <h2 class="result-text" id = "js-result-text" style="display : none">Result</h2>
+
+                <h4><p class="result-decision" id="js-result-decision"></p></h4>
+        
+                    <p id="js-result-desc"></p>
+            
+                <h2 class="score-text">Score</h2>
+            
+                <p class="score-board" id="game-score"></p>
+            </div>
+            
+            <center><button class="reset-btn" onclick="resetScore()">Reset Score</button></center>
+
+        </div>
+    </div>
+
+   
+
+<script src="js/script.js"></script>
+</body>
+</html>
