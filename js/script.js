@@ -36,6 +36,46 @@ const score = JSON.parse(window.localStorage.getItem('score')) || {
 
 displayScore();
 
+let isAutoPlaying = false;
+let intervelId = 0; 
+
+function autoPlay(){
+
+    const autoPlayBtn = document.querySelector('.auto-play-btn');
+
+    if(autoPlayBtn.innerHTML == 'Auto Play'){
+        autoPlayBtn.innerHTML = 'Stop Playing';
+    }else if(autoPlayBtn.innerHTML == 'Stop Playing'){
+        autoPlayBtn.innerHTML = 'Auto Play';
+    }
+ 
+    // Using Arrow function
+
+    if(!isAutoPlaying){       // isAutoPlaying == false
+        intervelId = setInterval(() => {
+        const playerMove = pickRandomMove();
+            playGame(playerMove);
+        }, 1000);
+        isAutoPlaying = true;
+    }else{
+        clearInterval(intervelId);
+        isAutoPlaying = false;
+    }
+
+    // Using Regular function
+
+    // if(!isAutoPlaying){       // isAutoPlaying == false
+    //     intervelId = setInterval(function(){
+    //     const playerMove = pickRandomMove();
+    //         playGame(playerMove);
+    //     }, 1000);
+    //     isAutoPlaying = true;
+    // }else{
+    //     clearInterval(intervelId);
+    //     isAutoPlaying = false;
+    // }
+}
+
 function playGame(playerMove){
 
     const computerMove = pickRandomMove();
